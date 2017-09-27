@@ -19,11 +19,11 @@ Challenges within each section are meant to be solved in order.
 1.  Navigate to a subdirectory, like `project`
 -`cd ./project`
 1.  Navigate to the parent directory of your working directory
--`pwd; cd ../../`
+-`pwd; cd ../`
 1.  Navigate to a nested subdirectory, like `path/to/project`
--`cd ~/path/to/project`
+-`cd path/to/project`
 1.  Navigate to your home directory
--`cd /`
+-`cd`
 1.  Navigate back to the previous directory
 -`cd -`
 
