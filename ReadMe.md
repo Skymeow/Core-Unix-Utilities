@@ -25,7 +25,7 @@ Challenges within each section are meant to be solved in order.
 1.  Navigate to your home directory
 -`cd /`
 1.  Navigate back to the previous directory
--`cd ../`
+-`cd -`
 
 ### Variables
 
