@@ -28,6 +28,7 @@ Follow these steps to set up your own repository:
 Challenges within each section are meant to be solved in order.
 
 ### Navigation
+cd/: go to root
 
 1.  Print the path of your working directory
 - `pwd`
@@ -36,7 +37,7 @@ Challenges within each section are meant to be solved in order.
 1.  List the files with a particular extension, like `.txt`
 -`ls *.txt`
 1.  List the files in a subdirectory, like `project`
--`cd ./project; ls`
+-`ls ./project`
 1.  Navigate to a subdirectory, like `project`
 -`cd ./project`
 1.  Navigate to the parent directory of your working directory
@@ -53,15 +54,15 @@ Challenges within each section are meant to be solved in order.
 1.  Print a sentence, like `Hello world`
 -`echo "Hello World"`
 1.  Print a variable value, like `$USER` or `$PATH`
--`echo "$USER"`
+-`echo $USER`
 1.  Set a variable `NAME` equal to your first name, then print its value
--`NAME="sky"; echo "NAME"`
+-`NAME="sky"; echo $NAME`
 1.  Set a variable `FULL_NAME` equal to your full name, then print its value
--`FULL_NAME="skyxu"; echo "$FULL_NAME"`
+-`FULL_NAME="skyxu"; echo $FULL_NAME`
 1.  Print all environment variables (names and values)
--`printenv`
+-`printenv` or `env`
 1.  Make an alias named `hello` that prints `Hello world`
--`bashrc`
+-`greeting = 'hello'; alias hello = "echo $greeting"`
 1.  Make an alias named `gocode` that navigates to your code directory
 -`bashrc ~/code`
 1.  Print all aliases (names and values)
@@ -80,30 +81,56 @@ this prints out the dir in an arr
 
 
 ### Files
-
+`ls -a`: show all files including hidden files
+`ls *`: show all folders and files within them
 1.  Navigate to the directory `Animals`
--`cd Animal`
+-`cd A`
 1.  Print the contents of the file `Cats.txt`
 -`cat Cats.txt`
 -`less Cats.txt`
 1.  Print the contents of both files `Cats.txt` and `Dogs.txt`
--`
+-`cat Cats.txt ; echo "++++++++"; cat Dogs.txt`
+<!-- only show first two lines of file, by default is 10 lines -->
+-`head -n2 cats.txt Dogs.txt`
 1.  Count the words in the file `Cats.txt`
+- `wc Cats.txt`
+<!-- count lines and words -->
+`ls | wc`
 1.  Count the words in all files with the extension `.txt`
+<!-- show each file count and total count of all files -->
+`wc *.txt`
 1.  Copy the file `Dogs.txt` to a new file `BabyDogs.txt`
+<!-- copy without replacing, additional adding files -->
+`cat Dogs.txt >> BabyDogs.txt`
+`cp Dogs.txt BabyDogs2.txt`
+<!-- rewrite babydogs file -->
+`cat Dogs.txt > BabyDogs.txt`
+<!-- move dogs file to babydog3 -->
+`mv Dogs.txt BabyDogs3.txt`
 1.  Rename the file `BabyDogs.txt` to `Puppies.txt`
+`mv BabyDogs.txt Puppies.txt`
 1.  Make a new directory named `Shelter` inside `Animals`
+`mkdir Shelter`
 1.  Move the file `Puppies.txt` into the directory `Shelter`
+`mv Puppies.txt Shelter/`
 1.  Copy the file `Cats.txt` to `Kittens.txt` inside `Shelter`
+`cp Cats.txt Shelter/kittens.txt`
 1.  List the files within the directory `Shelter`
+`ls /Shelter`
 1.  Count the words in all `.txt` files inside `Shelter`
+`wc Shelter/*.txt`
 1.  Try to remove the directory `Shelter` (this should fail)
+`rmdir Shelter/`
 1.  Remove all `.txt` files inside `Shelter`
+`-r is recursively remove`
+`rm -i -r Shelter/*.txt`
 1.  Remove the directory `Shelter` (this should succeed)
 1.  Now cry because you just deleted those poor tiny animals
 
 ### Permissions
-
+give write permission to group
+-`chmod g+w filename`
+-`chomd go-rwx`
 1.  Print out your user name
 1.  List the permissions (and metadata) of all `.txt` files
 1.  Give all users write permission on the file `Cats.txt`
