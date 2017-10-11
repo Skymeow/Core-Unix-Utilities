@@ -74,7 +74,6 @@ Challenges within each section are meant to be solved in order.
 1.  Read the manual for a command, like `echo` or `ls`
 -`man echo` -`man ls`
 1.  Print the file path to a command, like `bash` or `python`
-<<<<<<< HEAD
 -`python -c "import sys; print(sys.path)`
 this prints out the dir in an arr
 -`python -c "import sys; print(':'.join(x for x in sys.path if x))`
